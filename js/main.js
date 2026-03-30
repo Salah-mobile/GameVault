@@ -10,3 +10,10 @@ for (let i = 0; i < categories.length; i++) {
     btn.innerText=categories[i]
     btnsS.appendChild(btn)
 }
+let imgs=games.map(it=>(it.image))
+let imgSP=document.getElementById("imgs")
+for (let i = 0; i < imgs.length; i++) {
+    let img=document.createElement("img")
+     img.src=imgs[i]    
+     imgSP.appendChild(img)
+}
