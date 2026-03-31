@@ -6,8 +6,8 @@ categories.unshift("All")
 let btnsS=document.getElementById('btns')
 for (let i = 0; i < categories.length; i++) {
     let btn=document.createElement("button")
+    btn.className="bg-white text-black mx-2 px-4 py-2 rounded-full"
     btn.innerText=categories[i]
-    btn.className="btnC"
     btnsS.appendChild(btn)
 }
 let imgs=games.map(it=>(it.image))
