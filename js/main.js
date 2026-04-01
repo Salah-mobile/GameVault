@@ -25,7 +25,9 @@ serachI.addEventListener("input", () => {
   Creatcarts(array, cardP)
 
 })
-let imgs = games.map(it => (it.image))
+let imgs = games
+  .sort((a, b) => a.price - b.price)
+  .map(it => it.image)
 let imgSP = document.getElementById("imgs")
 for (let i = 0; i < imgs.length; i++) {
   let img = document.createElement("img")
@@ -54,30 +56,6 @@ for (let i = 0; i < imgs.length; i++) {
   })
   imgSP.appendChild(img)
 }
-let page2 = document.getElementById("secondPage")
-let res = GetP()
-for (let i = 0; i < res.length; i++) {
-  let tr = document.createElement("tr")
-  let name = document.createElement("td")
-  name.innerText = res[i].title
-  let imgP = document.createElement("td")
-  let img = document.createElement("img")
-  img.src = res[i].image
-  img.width = 100
-  imgP.appendChild(img)
-  let quantite = document.createElement("td")
-  let div = document.createElement("div")
-  let icon1 = document.createElement("i")
-  quantite.innerText = 0
-  let price = document.createElement("td")
-  price.innerText = res[i].price
-  tr.appendChild(name)
-  tr.appendChild(imgP)
-  tr.appendChild(quantite)
-  tr.appendChild(price)
-  document.getElementById("bodyT").appendChild(tr)
-}
-
 let cardP = document.getElementById("cards")
 Creatcarts(games, cardP)
 let items = document.querySelectorAll("#menuBottom li i");
