@@ -11,66 +11,56 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="bg-black text-white pl-30">
+<body class="bg-black text-white pl-8 ">
     <div id="firstPage">
-        <div id="input" class="bg-white mx-50 mt-8 mb-9 rounded-full text-black p-2 ">
-            <input type="text">
-            <i class=" ri-search-line text-black"></i>
+        <div id="input"
+            class="flex flex-row justify-around bg-white w-96 mx-auto mt-8 mb-9 rounded-full text-black p-2">
+            <input type="text" id="ser" placeholder="search">
+            <i class="ri-search-line text-black"></i>
         </div>
-        <div id="btns" class="my-4">
+        <div id="btns" class="my-4 flex flex-row overflow-x-auto">
         </div>
-        <h1 class="text-[34px]">your freind playing </h1>
+        <h1 class="text-[34px] mb-[20px]">your freind playing </h1>
         <p>play the same game with your friends and find the fun</p>
-        <div id="imgs">
+        <div id="imgs" class="flex gap-[20px] py-6 overflow-x-auto">
         </div>
-        <h1>The poulaire games</h1>
-        <div id="cards">
+        <h1 class="text-[30px]">The poulaire games</h1>
+        <div id="cards" class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 my-8  gap-8">
+        </div>
+        <div id="overlay" class="fixed inset-0 bg-black/50 hidden flex justify-center items-center z-50">
+            <div id="modal" class="bg-white p-6 rounded-[20px] w-[300px] text-center">
+                <h2 id="modalTitle" class="text-xl font-bold mb-4 text-black"></h2>
+                <img id="modalImg" class="w-[200px] h-[200px] object-cover m-auto rounded-[20px]" />
+                <div class="flex flex-row justify-between  items-center my-4 ">
+                    <p id="modalPrice" class="text-lg text-black">
+                    </p><i class=" ri-add-large-fill  rounded-[20px] text-black " id="ic"></i>
 
+                </div>
+            </div>
         </div>
     </div>
     <div id="secondPage">
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo pariatur, nesciunt ullam culpa iste ex
-            ipsa eligendi modi quidem eos molestiae veniam. Excepturi debitis culpa nostrum magni iusto delectus?</h1>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo pariatur, nesciunt ullam culpa iste
-            ex
-            ipsa eligendi modi quidem eos molestiae veniam. Excepturi debitis culpa nostrum magni iusto delectus?
-        </h1>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo pariatur, nesciunt ullam culpa iste
-            ex
-            ipsa eligendi modi quidem eos molestiae veniam. Excepturi debitis culpa nostrum magni iusto delectus?
-        </h1>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo pariatur, nesciunt ullam culpa iste
-            ex
-            ipsa eligendi modi quidem eos molestiae veniam. Excepturi debitis culpa nostrum magni iusto delectus?
-        </h1>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo pariatur, nesciunt ullam culpa iste
-            ex
-            ipsa eligendi modi quidem eos molestiae veniam. Excepturi debitis culpa nostrum magni iusto delectus?
-        </h1>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo pariatur, nesciunt ullam culpa iste
-            ex
-            ipsa eligendi modi quidem eos molestiae veniam. Excepturi debitis culpa nostrum magni iusto delectus?
-        </h1>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo pariatur, nesciunt ullam culpa iste
-            ex
-            ipsa eligendi modi quidem eos molestiae veniam. Excepturi debitis culpa nostrum magni iusto delectus?
-        </h1>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo pariatur, nesciunt ullam culpa iste
-            ex
-            ipsa eligendi modi quidem eos molestiae veniam. Excepturi debitis culpa nostrum magni iusto delectus?
-        </h1>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo pariatur, nesciunt ullam culpa iste
-            ex
-            ipsa eligendi modi quidem eos molestiae veniam. Excepturi debitis culpa nostrum magni iusto delectus?
-        </h1>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo pariatur, nesciunt ullam culpa iste
-            ex
-            ipsa eligendi modi quidem eos molestiae veniam. Excepturi debitis culpa nostrum magni iusto delectus?
-        </h1>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead class="text-gray-300 border-b border-gray-700">
+                    <tr>
+                        <th class="py-3 px-4">Title</th>
+                        <th class="py-3 px-4">image</th>
+                        <th class="py-3 px-4">quantité</th>
+                        <th class="py-3 px-4 ">Price</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-800" id="bodyT">
+                </tbody>
+
+            </table>
+
+        </div>
+
     </div>
-    <ul id="menuBottom">
-        <li><i class="ri-menu-line active"></i></li>
-        <li><i class="ri-shopping-bag-4-line"></i></li>
+    <ul id="menuBottom" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-red-500 flex gap-6 px-6 py-4 rounded-[30px]">
+        <li><i class="ri-menu-line bg-black py-3 px-5 rounded-[20px]"></i></li>
+        <li><i class=" ri-shopping-bag-4-line  py-3 px-5 rounded-[20px]"></i></li>
     </ul>
     <script src="./js/main.js" type="module"> </script>
 
