@@ -72,3 +72,11 @@ for (let i = 0; i < items.length; i++) {
     document.getElementById(pages[i]).style.display = "block";
   });
 }
+
+let btn = document.getElementById('btn')
+btn.addEventListener("click", () => {
+  let prices = document.querySelectorAll(".pr")
+  let somme = 0
+  prices.forEach(it => somme += parseInt(it.innerText))
+
+})
