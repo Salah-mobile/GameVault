@@ -21,7 +21,7 @@ export function Pannier() {
             div.appendChild(icon1)
             let p = document.createElement("p")
             p.className = "Qan"
-            p.innerText = 1
+            p.innerText = res[i].quantity
             div.appendChild(p)
             let icon2 = document.createElement("i")
             icon2.className = "ri-subtract-line cursor-pointer"
@@ -31,18 +31,18 @@ export function Pannier() {
             price.className = "pr"
             price.innerText = res[i].price + " $"
             icon1.addEventListener("click", () => {
-                let qtyElement = div.querySelector(".Qan")
-                qtyElement.innerText = parseInt(qtyElement.innerText) + 1
-                let priceElement = tr.querySelector(".pr")
-                priceElement.innerText = res[i].price * parseInt(qtyElement.innerText) + " $"
+                res[i].quantity += 1
+                localStorage.setItem("productP", JSON.stringify(res))
+                Pannier()
             })
             icon2.addEventListener("click", () => {
-                let qtyElement = div.querySelector(".Qan")
-                if (parseInt(qtyElement.innerText) > 1) {
-                    qtyElement.innerText = parseInt(qtyElement.innerText) - 1
-                    let priceElement = tr.querySelector(".pr")
-                    priceElement.innerText = res[i].price * parseInt(qtyElement.innerText) + " $"
+                if (res[i].quantity > 1) {
+                    res[i].quantity -= 1
+                } else {
+                    res.splice(i, 1)
                 }
+                localStorage.setItem("productP", JSON.stringify(res))
+                Pannier()
             })
             let deleteI = document.createElement("td")
             let icon = document.createElement("i")

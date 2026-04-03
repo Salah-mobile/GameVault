@@ -8,7 +8,11 @@ categories.unshift("All")
 let btnsS = document.getElementById('btns')
 for (let i = 0; i < categories.length; i++) {
   let btn = document.createElement("button")
-  btn.className = "bg-white text-black mx-2 px-4 py-2 rounded-full"
+  btn.className = "bg-white text-black mx-2 px-4 py-2 rounded-full "
+  if (categories[i] === "All") {
+    btn.classList.remove("bg-white", "text-black")
+    btn.classList.add("bg-black", "text-white", "border-2", "border-red-700", "border-solid")
+  }
   btn.innerText = categories[i]
   btn.addEventListener("click", () => {
     let array = games.filter(it => it.category == categories[i])
@@ -19,7 +23,7 @@ for (let i = 0; i < categories.length; i++) {
       b.classList.add("bg-white", "text-black")
     })
     btn.classList.remove("bg-white", "text-black")
-    btn.classList.add("bg-black", "text-white", "border-2", "border-red-700")
+    btn.classList.add("bg-black", "text-white", "border-2", "border-red-700", "border-solid")
     if (categories[i] == "All") {
       Creatcarts(games, cardP)
     }
