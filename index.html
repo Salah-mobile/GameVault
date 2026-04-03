@@ -27,13 +27,13 @@
         <div id="cards" class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 my-8  gap-8">
         </div>
         <div id="overlay" class="fixed inset-0 bg-black/50 hidden flex justify-center items-center z-50">
-            <div id="modal" class="bg-white p-6 rounded-[20px] w-[300px] text-center">
-                <h2 id="modalTitle" class="text-xl font-bold mb-4 text-black"></h2>
+            <div id="modal" class="bg-black p-6 rounded-[20px] w-[300px] text-center">
+                <h2 id="modalTitle" class="text-xl font-bold mb-4 text-white"></h2>
                 <img id="modalImg" class="w-[200px] h-[200px] object-cover m-auto rounded-[20px]" />
                 <div class="flex flex-row justify-between  items-center my-4 ">
-                    <p id="modalPrice" class="text-lg text-black">
-                    </p><i class=" ri-add-large-fill  rounded-[20px] text-black " id="ic"></i>
-
+                    <p id="modalPrice" class="text-lg text-white  bg-red-700 px-4 rounded-[20px] ">
+                    </p><i class=" ri-add-large-fill  rounded-[20px] text-white cursor-pointer bg-red-700 p-2  "
+                        id="ic"></i>
                 </div>
             </div>
         </div>
@@ -57,9 +57,7 @@
                     Commander
                 </button>
             </div>
-
         </div>
-
     </div>
     <ul id="menuBottom" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-red-500 flex gap-6 px-6 py-4 rounded-[30px]">
         <li><i class="ri-menu-line bg-black py-3 px-5 rounded-[20px]"></i></li>

@@ -62,16 +62,14 @@ export function Creatcarts(games, cardP) {
 
         icon.addEventListener("click", () => {
             addItems(games[i])
-            alert("add with success")
-        })
+            alert("add with success");
 
+        })
         btnBox.appendChild(price)
         btnBox.appendChild(icon)
-
         div.appendChild(image)
         div.appendChild(title)
         div.appendChild(btnBox)
-
         cardP.appendChild(div)
     }
 }

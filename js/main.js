@@ -1,7 +1,8 @@
 import { Creatcarts } from "./cart.js";
 import { games } from "./data.js";
+import { Pannier } from "./pannier.js";
 import { addItems, GetP } from "./storage.js";
-
+Pannier()
 let categories = [... new Set(games.map(it => (it.category)))]
 categories.unshift("All")
 let btnsS = document.getElementById('btns')
@@ -12,6 +13,13 @@ for (let i = 0; i < categories.length; i++) {
   btn.addEventListener("click", () => {
     let array = games.filter(it => it.category == categories[i])
     Creatcarts(array, cardP)
+    let allBtns = btnsS.querySelectorAll("button")
+    allBtns.forEach(b => {
+      b.classList.remove("bg-black", "text-white", "border-2", "border-solid", "border-red-700")
+      b.classList.add("bg-white", "text-black")
+    })
+    btn.classList.remove("bg-white", "text-black")
+    btn.classList.add("bg-black", "text-white", "border-2", "border-red-700")
     if (categories[i] == "All") {
       Creatcarts(games, cardP)
     }
@@ -78,5 +86,9 @@ btn.addEventListener("click", () => {
   let prices = document.querySelectorAll(".pr")
   let somme = 0
   prices.forEach(it => somme += parseInt(it.innerText))
+  alert(`your commande is confirmed : the total price ${somme}`)
+  localStorage.clear()
+  console.log("commander");
 
+  Pannier()
 })
