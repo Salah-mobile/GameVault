@@ -1,9 +1,9 @@
+import { NumberP } from "./main.js"
 import { deleteItem, GetP } from "./storage.js"
 
 export function Pannier() {
     document.getElementById("bodyT").innerHTML = ""
     let res = GetP()
-
     if (res != null) {
         for (let i = 0; i < res.length; i++) {
             let tr = document.createElement("tr")
@@ -27,7 +27,7 @@ export function Pannier() {
 
             let p = document.createElement("p")
             p.className = "Qan"
-            p.innerText = res[i].quantity   // ✅ مهم
+            p.innerText = res[i].quantity   
             div.appendChild(p)
 
             let icon2 = document.createElement("i")
@@ -38,17 +38,16 @@ export function Pannier() {
 
             let price = document.createElement("td")
             price.className = "pr"
-            price.innerText = res[i].price * res[i].quantity + " $" // ✅ مهم
+            price.innerText = res[i].price * res[i].quantity + " $" 
 
-            // 🔼 PLUS
             icon1.addEventListener("click", () => {
                 let data = GetP()
                 data[i].quantity += 1
                 localStorage.setItem("productP", JSON.stringify(data))
+                NumberP()
                 Pannier()
             })
 
-            // 🔽 MINUS
             icon2.addEventListener("click", () => {
                 let data = GetP()
 
@@ -57,8 +56,8 @@ export function Pannier() {
                 } else {
                     data.splice(i, 1)
                 }
-
                 localStorage.setItem("productP", JSON.stringify(data))
+                NumberP()
                 Pannier()
             })
 
@@ -68,6 +67,7 @@ export function Pannier() {
 
             icon.addEventListener('click', () => {
                 deleteItem(res[i])
+                NumberP()
             })
 
             deleteI.appendChild(icon)

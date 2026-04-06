@@ -1,3 +1,4 @@
+import { NumberP } from "./main.js"
 import { addItems } from "./storage.js"
 
 export function Creatcarts(games, cardP) {
@@ -62,6 +63,7 @@ export function Creatcarts(games, cardP) {
 
         icon.addEventListener("click", () => {
             addItems(games[i])
+            NumberP()
             alert("add with success");
 
         })
