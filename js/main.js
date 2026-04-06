@@ -54,6 +54,7 @@ for (let i = 0; i < imgs.length; i++) {
     const icon = document.getElementById("ic")
     icon.addEventListener("click", () => {
       addItems(games[i])
+      NumberP()
       alert("the product add with success")
     })
     modalTitle.innerText = games[i].title;
@@ -96,3 +97,9 @@ btn.addEventListener("click", () => {
 
   Pannier()
 })
+
+export function NumberP() {
+  let numC = document.getElementById("conterP")
+  let numberI = GetP()
+  numC.innerText = numberI.length
+}
